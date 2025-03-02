@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var categories = ["Animals", "Food", "History", "Science", "Space", "Weird Laws", "Technology", "Movies", "Music", "Random"]
     var generatorLogic = GeneratorLogic()
+    var selectedCategory = ""
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
@@ -26,36 +27,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCategory = categories[indexPath.row]
-        print("The selected category is: \(selectedCategory)")
-        let factText = generateFact(selectedCategory)
-        print("The fact is: \(factText)")
-    }
+        selectedCategory = categories[indexPath.row]
         
-    func generateFact(_ category: String) -> String {
-        switch category {
-        case "Animals":
-            return generatorLogic.getAnimalFact()
-        case "Food":
-            return generatorLogic.getFoodFacts()
-        case "History":
-            return generatorLogic.getHistoryFacts()
-        case "Science":
-            return generatorLogic.getScienceFacts()
-        case "Space":
-            return generatorLogic.getSpaceFacts()
-        case "Weird Laws":
-            return generatorLogic.getWeirdLawsFacts()
-        case "Technology":
-            return generatorLogic.getTechnologyFacts()
-        case "Movies":
-            return generatorLogic.getMovieFacts()
-        case "Music":
-            return generatorLogic.getMusicFacts()
-        case "Random":
-            return generatorLogic.getRandomFact()
-        default :
-            return "I don't have a fact for that category."
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        
+        self.performSegue(withIdentifier: "toFact", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "toFact" {
+            let navigation = segue.destination as! FactViewController
+            navigation.selectedCategory = selectedCategory
         }
     }
     

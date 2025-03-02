@@ -100,14 +100,14 @@ struct GeneratorLogic {
         "In the UK, it's considered an offense to handle a salmon in a 'suspicious' manner.",
         "In Alaska, it is illegal to whisper in someone's ear while they are moose hunting.",
         "In some areas of Arizona, a law exists preventing more than a certain number of unrelated women from living together.",
-        "In Hawaii it is illegal to get a tattoo behind your ear or on your eyelid unless in the presence of a registered physician.",
+        "In Hawaii, it is illegal to get a tattoo behind your ear or on your eyelid unless in the presence of a registered physician.",
         "In Baltimore, Maryland, it is illegal to take a lion to the movies.",
         "In Mississippi, it is illegal to drive around the town square more than 100 times in a single session.",
         "In New York, a license must be purchased before hanging clothes on a clothesline.",
-        "In New York City it's illegal to shake a dust mop out a window.",
-        "In Nags Head North Carolina you can be fined for singing out of tune for more than ninety seconds.",
-        "In Tennessee, Driving is not to be done while asleep...?",
-        "In Richmond, Virginia it is illegal to flip a coin in a restaurant to see who pays for a coffee.",
+        "In New York City, it's illegal to shake a dust mop out a window.",
+        "In Nags Head, North Carolina, you can be fined for singing out of tune for more than ninety seconds.",
+        "In Tennessee, driving is not to be done while asleep...?",
+        "In Richmond, Virginia, it is illegal to flip a coin in a restaurant to see who pays for a coffee.",
         "It’s a legal requirement to smile at all times except at funerals or hospitals in Milan, Italy.",
         "It’s against the law to play too many non-Canadian artists on Canadian radio.",
         "It’s illegal not to walk your dog at least three times a day in Turin, Italy.",
@@ -239,6 +239,33 @@ struct GeneratorLogic {
             return getMusicFacts()
         default:
             return "No fact generated."
+        }
+    }
+    
+    func generateFact(_ category: String) -> String {
+        switch category {
+        case "Animals":
+            return getAnimalFact()
+        case "Food":
+            return getFoodFacts()
+        case "History":
+            return getHistoryFacts()
+        case "Science":
+            return getScienceFacts()
+        case "Space":
+            return getSpaceFacts()
+        case "Weird Laws":
+            return getWeirdLawsFacts()
+        case "Technology":
+            return getTechnologyFacts()
+        case "Movies":
+            return getMovieFacts()
+        case "Music":
+            return getMusicFacts()
+        case "Random":
+            return getRandomFact()
+        default :
+            return "I don't have a fact for that category."
         }
     }
 }

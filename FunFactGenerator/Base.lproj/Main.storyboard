@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,7 +37,7 @@
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="V5m-J4-GfA">
                                         <rect key="frame" x="20" y="86.333333333333314" width="333" height="652.66666666666674"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="1" green="0.71998611599999995" blue="0.46668203990000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" textLabel="BlO-Cg-wko" style="IBUITableViewCellStyleDefault" id="WUp-K3-e9t">
                                                 <rect key="frame" x="0.0" y="50" width="333" height="43.666667938232422"/>
@@ -71,7 +70,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.71998611596642836" blue="0.466682039854869" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BRj-UF-dNE" secondAttribute="bottom" constant="10" id="Kul-qe-ErR"/>
                             <constraint firstItem="BRj-UF-dNE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="MWf-gk-5OI"/>
@@ -79,15 +78,106 @@
                             <constraint firstItem="BRj-UF-dNE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="X5o-lC-uq3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="7Hh-nN-wds" kind="presentation" identifier="toFact" id="er8-AM-zTU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-60" y="-27"/>
         </scene>
+        <!--Fact View Controller-->
+        <scene sceneID="7LQ-xa-5O6">
+            <objects>
+                <viewController id="7Hh-nN-wds" customClass="FactViewController" customModule="FunFactGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SJF-7X-IyX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="svK-1N-5nC">
+                                <rect key="frame" x="20" y="20" width="353" height="782"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fact" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RV9-Cz-PHF">
+                                        <rect key="frame" x="156" y="0.0" width="41.333333333333343" height="692"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eGF-zZ-RXJ">
+                                        <rect key="frame" x="88.333333333333329" y="692" width="176.33333333333337" height="90"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxf-zK-R6G">
+                                                <rect key="frame" x="37.666666666666679" y="0.0" width="101.33333333333331" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="gbB-vz-TsJ"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <backgroundConfiguration key="background" cornerRadius="25" strokeWidth="3" strokeOutset="7">
+                                                        <color key="backgroundColor" red="0.94328010082244873" green="0.48481188709883866" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Next Fact">
+                                                            <attributes>
+                                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                <font key="NSFont" size="18" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="nextFactPressed:" destination="7Hh-nN-wds" eventType="touchUpInside" id="Kvh-rL-ocA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nW-nG-Lu2">
+                                                <rect key="frame" x="0.0" y="55" width="176.33333333333334" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="8Op-p3-dO6"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <backgroundConfiguration key="background" cornerRadius="25" strokeWidth="3" strokeOutset="7">
+                                                        <color key="backgroundColor" red="0.94328010080000002" green="0.48481188710000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Back to Categories">
+                                                            <attributes>
+                                                                <font key="NSFont" size="18" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="backPressed:" destination="7Hh-nN-wds" eventType="touchUpInside" id="5OJ-Kc-lL0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fhd-Zn-3kb"/>
+                        <color key="backgroundColor" red="1" green="0.71998611599999995" blue="0.46668203990000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="fhd-Zn-3kb" firstAttribute="trailing" secondItem="svK-1N-5nC" secondAttribute="trailing" constant="20" id="0wj-4e-UHT"/>
+                            <constraint firstItem="svK-1N-5nC" firstAttribute="leading" secondItem="fhd-Zn-3kb" secondAttribute="leading" constant="20" id="Mfg-oj-84E"/>
+                            <constraint firstItem="svK-1N-5nC" firstAttribute="top" secondItem="fhd-Zn-3kb" secondAttribute="top" constant="20" id="hru-G6-H3A"/>
+                            <constraint firstItem="fhd-Zn-3kb" firstAttribute="bottom" secondItem="svK-1N-5nC" secondAttribute="bottom" constant="40" id="waI-GW-Rp5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="factLabel" destination="RV9-Cz-PHF" id="yLe-ut-gDE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5WO-S0-pKX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807" y="-27"/>
+        </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
